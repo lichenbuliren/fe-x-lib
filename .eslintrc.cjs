@@ -25,14 +25,15 @@ module.exports = {
       'error',
       'ignorePackages',
       {
-        "": 'never',
-        'js': 'never',
-        'jsx': 'never',
-        'ts': 'never',
-        'tsx': 'never',
-        'mjs': 'never'
-      }
+        '': 'never',
+        js: 'never',
+        jsx: 'never',
+        ts: 'never',
+        tsx: 'never',
+        mjs: 'never',
+      },
     ],
+    'import/prefer-default-export': ['off' | 'warn' | 'error', { target: 'any' }],
     'react/function-component-definition': [
       2,
       {
