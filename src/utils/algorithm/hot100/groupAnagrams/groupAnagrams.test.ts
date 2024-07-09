@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import { groupAnagrams } from './index';
+import { groupAnagrams } from './groupAnagrams';
 
 // 输入: strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
 // 输出: [["bat"],["nat","tan"],["ate","eat","tea"]]

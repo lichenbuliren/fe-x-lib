@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import { longestConsecutive } from './index';
+import { longestConsecutive } from './longestConsecutive';
 
 test('[100, 4, 200, 1, 3, 2] => 4', () => {
   const nums = [100, 4, 200, 1, 3, 2];
