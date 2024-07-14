@@ -1,32 +1,30 @@
-export function lengthOfLongestSubstring(str: string): number {
-  if (str.length === 0 || str.length === 1) return str.length;
-  const strArr = str.split('');
-
-  let count = 0;
-  let result = 0;
-  let resultStr: string[] = [];
-  for (let i = 0; i < strArr.length - 1; i += 1) {
-    const cur = strArr[i];
-    let j = i + 1;
-    if (!resultStr.includes(cur)) {
-      count += 1;
-      result = Math.max(result, count);
-      resultStr.push(cur);
+/**
+ * 解题思路：
+ *
+ * 滑动窗口
+ * @param str
+ * @returns
+ */
+export function lengthOfLongestSubstring(s: string): number {
+  const cache = new Map();
+  let max = 0;
+  // 左指针 left, 又指针 i;
+  for (let i = 0, left = 0; i < s.length; i += 1) {
+    // 如果命中相同的字符的时候，移动左侧指针
+    if (cache.has(s[i])) {
+      // 找到出现重复的时候。left 的指针
+      // 这里左侧指针取交大的那个，因为这里可能出现过去已经遍历过的所有字符的相同的那个，所以需要取最大值，而不能简单的 left 索引 + 1
+      left = Math.max(left, cache.get(s[i]) + 1);
     }
 
-    while (j < strArr.length) {
-      const subCur = strArr[j];
-      if (!resultStr.includes(subCur)) {
-        resultStr.push(subCur);
-        count += 1;
-        j += 1;
-        result = Math.max(result, count);
-      } else {
-        count = 0;
-        resultStr = [];
-        break;
-      }
-    }
+    // i 为右指针，所以这里两个指针相减得到字串长度
+    // i - left + 1 为子串长度
+    // 使用 Math.max(max, ) 记录最大值
+    max = Math.max(max, i - left + 1);
+
+    // 这里记录每个字符的索引
+    cache.set(s[i], i);
   }
-  return result;
+
+  return max;
 }
