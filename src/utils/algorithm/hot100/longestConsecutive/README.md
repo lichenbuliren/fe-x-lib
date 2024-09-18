@@ -7,19 +7,13 @@ https://leetcode.cn/problems/longest-consecutive-sequence/?envType=study-plan-v2
 请你设计并实现时间复杂度为 O(n) 的算法解决此问题。
 
 示例 1：
-
 输入：nums = [100,4,200,1,3,2]
 输出：4
 解释：最长数字连续序列是 [1, 2, 3, 4]。它的长度为 4。
-示例 2：
 
+示例 2：
 输入：nums = [0,3,7,2,5,8,4,6,0,1]
 输出：9
-
-1. result = [100];
-2. 4 < result[0], result = [4, 100]
-3. 200 > result[len - 1], result = [4, 100, 200]
-4. 1 < result[0], result = []
 
 提示：
 0 <= nums.length <= 105
