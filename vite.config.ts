@@ -7,8 +7,8 @@ export default defineConfig({
   plugins: [react(), eslint()],
   resolve: {
     alias: [
-      { find: '@/Assets', replacement: '/src/Assets' },
-      { find: '@/Components', replacement: '/src/Components' },
+      { find: '@/assets', replacement: '/src/assets' },
+      { find: '@/components', replacement: '/src/components' },
     ],
   },
 });

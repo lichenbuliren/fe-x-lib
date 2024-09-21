@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './App.css';
-import Header from '@/Components/Header';
-import ReadTheDocs from '@/Components/ReadTheDocs';
+import Header from '@/components/Header';
+import ReadTheDocs from '@/components/ReadTheDocs';
 
 const App: React.FC = () => {
   const [count, setCount] = useState(0);
