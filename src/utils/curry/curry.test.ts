@@ -20,4 +20,6 @@ test('curry functoin', () => {
   const addFirst = curriedSum3(1, 2);
   expect(addFirst).toBeTypeOf('function');
   expect(addFirst(3)).toBe(6);
+  const d = curriedSum3();
+  expect(d(1)).toBeTypeOf('function');
 });
