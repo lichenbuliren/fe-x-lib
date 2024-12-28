@@ -15,6 +15,5 @@ export function shuffleArray<T>(array: T[]): T[] {
     // shuffledArray[j] = shuffledArray[i];
   }
 
-  console.log(shuffledArray); // 输出：随机排序后的数组
   return shuffledArray;
 }
